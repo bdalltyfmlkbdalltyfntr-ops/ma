@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* الوضع العادي (Light Mode) */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e6e9ef;
+    color: #333;
+}
+
+.calculator {
+    width: 320px;
+    padding: 25px;
+    border-radius: 30px;
+    background: #e6e9ef;
+    box-shadow: 20px 20px 60px #c4c7cb,
+                -20px -20px 60px #ffffff;
+}
+
+.display {
+    width: 100%;
+    height: 70px;
+    border-radius: 20px;
+    background: #e6e9ef;
+    box-shadow: inset 6px 6px 12px #c4c7cb,
+                inset -6px -6px 12px #ffffff;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2b2d42;
+    text-align: left;
+    margin-bottom: 25px;
+    direction: ltr;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #e6e9ef;
+    box-shadow: 6px 6px 12px #c4c7cb,
+                -6px -6px 12px #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+}
+
+.btn:active {
+    box-shadow: inset 4px 4px 8px #c4c7cb,
+                inset -4px -4px 8px #ffffff;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    border-radius: 30px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.btn-red { color: #e63946; }
+.btn-op { color: #457b9d; }
+
+.btn-equal {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 4px 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+/* زرار الـ Mode */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+#theme-btn {
+    width: 45px;
+    height: 22px;
+    background: #ccc;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#theme-btn::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+/* ----------------------------------
+   الوضع المظلم (Dark Mode Styles)
+---------------------------------- */
+body.dark {
+    background-color: #1e1e24;
+    color: #fff;
+}
+
+body.dark .calculator {
+    background: #1e1e24;
+    box-shadow: 15px 15px 30px #151519,
+                -15px -15px 30px #27272f;
+}
+
+body.dark .display {
+    background: #1e1e24;
+    box-shadow: inset 5px 5px 10px #151519,
+                inset -5px -5px 10px #27272f;
+    color: #fff;
+}
+
+body.dark .btn {
+    background: #1e1e24;
+    box-shadow: 5px 5px 10px #151519,
+                -5px -5px 10px #27272f;
+    color: #ddd;
+}
+
+body.dark .btn:active {
+    box-shadow: inset 3px 3px 6px #151519,
+                inset -3px -3px 6px #27272f;
+}
+
+body.dark #theme-btn {
+    background: #3b82f6;
+}
+
+body.dark #theme-btn::after {
+    left: 25px;
+}
